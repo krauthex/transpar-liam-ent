@@ -15,5 +15,6 @@ if __name__ == "__main__":
 
     # print some rows
     # first row is just header
-    for i in rows[1:5]:
-        print(enrich_data(dict_from_html_tr(i)), "\n")
+    for i in rows[1:2]:
+        for k, v in sorted(enrich_data(dict_from_html_tr(i)).items()):
+            print(f"{k}: {v}")

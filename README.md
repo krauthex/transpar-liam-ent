@@ -11,7 +11,11 @@ After installing the dependencies (`BeautifulSoup4`, `requests`, `lxml`), you ca
 
 ```
 $ ./PoC.py
-{'relative url': '/PAKT/VHG/XXVII/J/J_08414/index.shtml', 'date': '25.10.2021', 'progress': 'has not been answered', 'title': 'Zukunft der Hackher-Kaserne (BMLV) - Frist für die Beantwortung 25.12.2021', 'number': '8414/J', 'url': 'https://www.parlament.gv.at/PAKT/VHG/XXVII/J/J_08414/index.shtml', 'inquiry': {'desc': 'Schriftliche Anfrage der Abgeordneten Douglas   Hoyos-Trauttmansdorff, Kolleginnen und Kollegen an die   Bundesministerin für Landesverteidigung betreffend    Zukunft der Hackher-Kaserne', 'from': 'Eingebracht von:    Douglas Hoyos-Trauttmansdorff', 'to': 'Eingebracht an:    Mag. Klaudia Tanner Regierungsmitglied     Bundesministerium für Landesverteidigung', 'refs': [{'url': 'https://www.parlament.gv.at/PAKT/VHG/XXVII/J/J_08414/imfname_1007132.pdf', 'ref': 'Anfrage (gescanntes Original) / PDF, 648 KB'}, {'url': 'https://www.parlament.gv.at/PAKT/VHG/XXVII/J/J_08414/fname_1007151.pdf', 'ref': 'Anfrage (elektr. übermittelte Version) / PDF, 85 KB'}, {'url': 'https://www.parlament.gv.at/PAKT/VHG/XXVII/J/J_08414/fnameorig_1007151.html', 'ref': 'HTML, 85 KB'}]}}
-
-...
+date: 25.10.2021
+inquiry: {'desc': 'Schriftliche Anfrage der Abgeordneten Douglas   Hoyos-Trauttmansdorff, Kolleginnen und Kollegen an die   Bundesministerin für Landesverteidigung betreffend    Zukunft der Hackher-Kaserne', 'from': 'Eingebracht von:    Douglas Hoyos-Trauttmansdorff', 'to': 'Eingebracht an:    Mag. Klaudia Tanner Regierungsmitglied     Bundesministerium für Landesverteidigung', 'refs': [{'url': 'https://www.parlament.gv.at/PAKT/VHG/XXVII/J/J_08414/imfname_1007132.pdf', 'ref': 'Anfrage (gescanntes Original) / PDF, 648 KB'}, {'url': 'https://www.parlament.gv.at/PAKT/VHG/XXVII/J/J_08414/fname_1007151.pdf', 'ref': 'Anfrage (elektr. übermittelte Version) / PDF, 85 KB'}, {'url': 'https://www.parlament.gv.at/PAKT/VHG/XXVII/J/J_08414/fnameorig_1007151.html', 'ref': 'HTML, 85 KB'}]}
+number: 8414/J
+progress: has not been answered
+relative url: /PAKT/VHG/XXVII/J/J_08414/index.shtml
+title: Zukunft der Hackher-Kaserne (BMLV) - Frist für die Beantwortung 25.12.2021
+url: https://www.parlament.gv.at/PAKT/VHG/XXVII/J/J_08414/index.shtml
 ```
