@@ -1,4 +1,4 @@
-# transpar-liam-ent
+# transpar[liam]ent
 
 This is a WIP; ideally, it will provide a tool to properly scrape the contents of the "Parlamentarische Anfragen" website of the Austrian parliament (see [here](https://www.parlament.gv.at/PAKT/JMAB/)).
 
