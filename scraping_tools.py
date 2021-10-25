@@ -1,8 +1,8 @@
-import requests as req
-import bs4
 import html
+from typing import Any, Union
 
-from typing import Union, Any
+import bs4
+import requests as req
 
 ## custom types
 Data = dict[str, Any]
