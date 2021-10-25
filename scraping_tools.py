@@ -71,7 +71,7 @@ def enrich_data(data: Data) -> EnrichedData:
 def inquiry_scraper(url: str) -> InquiryData:
     """Scrape contents of an inquiry page like description, sender, receiver and file links."""
     plaintxt = req_and_unescape(url)
-    soup = bs4.BeautifulSoup(plaintxt)
+    soup = bs4.BeautifulSoup(plaintxt, features="lxml")
     info = soup.find("div", {"class": "c_2"})
     description, fro, to = info.find_all("p")
 
