@@ -30,12 +30,12 @@ def clean_contents(raw_contents: bs4.element.Tag) -> str:
         s = conts[0].text.strip()
         return clean_str(s)
 
-    else:  # we apparently have to remove some nested tags in here
-        for i, c in enumerate(conts):
-            if hasattr(c, "text"):
-                s = c.text
-                conts[i] = clean_str(s)
-        return "".join(conts).strip()
+    # we apparently have to remove some nested tags in here
+    for i, c in enumerate(conts):
+        if hasattr(c, "text"):
+            s = c.text
+            conts[i] = clean_str(s)
+    return "".join(conts).strip()
 
 
 def dict_from_html_tr(tr: bs4.element.Tag) -> Data:
