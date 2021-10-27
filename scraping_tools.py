@@ -73,15 +73,15 @@ def inquiry_scraper(url: str) -> InquiryData:
     plaintxt = req_and_unescape(url)
     soup = bs4.BeautifulSoup(plaintxt, features="lxml")
     info = soup.find("div", {"class": "c_2"})
-    description, fro, to = info.find_all("p")
+    description, fro, to = info.find_all("p")  # pylint: disable=invalid-name
 
     def reference_builder(refs: list[bs4.element.Tag]) -> ReferenceList:
         """Builds a list of file names with hrefs."""
         inq_refs = []
-        for a in refs:
+        for ref in refs:
             inq_refs.append({
-                "url": f"{BASE_URL}{a['href']}",
-                "ref": a.contents[1]
+                "url": f"{BASE_URL}{ref['href']}",
+                "ref": ref.contents[1]
             })
         return inq_refs
 
