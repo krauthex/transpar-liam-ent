@@ -22,19 +22,19 @@ def req_and_unescape(url: str) -> str:
 
 def clean_contents(raw_contents: bs4.element.Tag) -> str:
     """Clean html contents from '\r' and whitespaces and such."""
-    def clean_str(s: str) -> str:
-        return s.replace("\n", "").replace("\t", "")
+    def clean_str(_s: str) -> str:
+        return _s.replace("\n", "").replace("\t", "")
 
     conts = raw_contents.contents
     if len(conts) == 1:
-        s = conts[0].text.strip()
-        return clean_str(s)
+        content_string = conts[0].text.strip()
+        return clean_str(content_string)
 
     # we apparently have to remove some nested tags in here
-    for i, c in enumerate(conts):
-        if hasattr(c, "text"):
-            s = c.text
-            conts[i] = clean_str(s)
+    for i, cont in enumerate(conts):
+        if hasattr(cont, "text"):
+            content_string = cont.text
+            conts[i] = clean_str(content_string)
     return "".join(conts).strip()
 
 
