@@ -38,20 +38,20 @@ def clean_contents(raw_contents: bs4.element.Tag) -> str:
     return "".join(conts).strip()
 
 
-def dict_from_html_tr(tr: bs4.element.Tag) -> Data:
+def dict_from_html_tablerow(tablerow: bs4.element.Tag) -> Data:
     """Generate a dictionary from an html tablerow."""
     status_img = {
         "03.gif": "has not been answered",
         "05.gif": "has been answered"
     }
 
-    raw_title, raw_number = tr.find_all("a", {"class": "table-mobile__title"})
+    raw_title, raw_number = tablerow.find_all("a", {"class": "table-mobile__title"})
 
     # TODO: type (J, or something else)
     data = {
-        "relative url": tr.find("div", {"class": "table-mobile__entry"})['data-arrow-url'],
-        "date": clean_contents(tr.find("div", {"class": "table-mobile__date"})),
-        "progress": status_img[tr.find("img")['src'].split("/")[-1]],
+        "rel_url": tablerow.find("div", {"class": "table-mobile__entry"})['data-arrow-url'],
+        "date": clean_contents(tablerow.find("div", {"class": "table-mobile__date"})),
+        "progress": status_img[tablerow.find("img")['src'].split("/")[-1]],
         "title": clean_contents(raw_title),
         "number": clean_contents(raw_number)
     }
@@ -62,7 +62,7 @@ def dict_from_html_tr(tr: bs4.element.Tag) -> Data:
 def enrich_data(data: Data) -> EnrichedData:
     """Enrich the data."""
     enriched_data = {**data}
-    enriched_data["url"] = f"{BASE_URL}{enriched_data['relative url']}"
+    enriched_data["url"] = f"{BASE_URL}{enriched_data['rel_url']}"
     enriched_data["inquiry"] = inquiry_scraper(enriched_data["url"])
 
     return enriched_data
