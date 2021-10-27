@@ -1,3 +1,4 @@
+"""This script provides functions to scrape information on "parlamentarische Anfragen." """
 import html
 from typing import Any, Union
 
@@ -47,13 +48,13 @@ def dict_from_html_tablerow(tablerow: bs4.element.Tag) -> Data:
 
     raw_title, raw_number = tablerow.find_all("a", {"class": "table-mobile__title"})
 
-    # TODO: type (J, or something else)
     data = {
         "rel_url": tablerow.find("div", {"class": "table-mobile__entry"})['data-arrow-url'],
         "date": clean_contents(tablerow.find("div", {"class": "table-mobile__date"})),
         "progress": status_img[tablerow.find("img")['src'].split("/")[-1]],
         "title": clean_contents(raw_title),
-        "number": clean_contents(raw_number)
+        "number": clean_contents(raw_number),
+        "kind": tablerow.find("span", {"class": "zeigeTooltip"})['title']
     }
 
     return data
